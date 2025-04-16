@@ -1,0 +1,12 @@
+<h1>Trip Planner</h1>
+<input type="text" [(ngModel)]="startPoint" placeholder="Start Point">
+<input type="text" [(ngModel)]="endPoint" placeholder="End Point"> 
+
+<button (click)="addTrip()">Add Trip</button>
+<button (click)="resetTrips()">Reset</button>
+
+<div *ngFor="let trip of getProcessedTrips(); let i = index" class="trip-row">
+  <span>{{ trip.code }}</span>
+  <span>{{ trip.level == 1 ? (trip.type == 'arrow' ? '→' : '—') : '↕' }}</span>
+</div>
+
